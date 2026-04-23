@@ -1,0 +1,22 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "run": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\hooks\\setup-appid.ps1"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "run": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\hooks\\notify-stop.ps1"
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "run": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\hooks\\notify-user.ps1"
+      }
+    ]
+  }
+}
