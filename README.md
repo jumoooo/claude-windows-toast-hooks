@@ -1,6 +1,8 @@
 # Claude Windows Toast Hooks
 
 > Windows 전용 저장소입니다. (macOS/Linux 미지원)
+<img width="322" height="399" alt="image" src="https://github.com/user-attachments/assets/83860338-d86d-4262-8ee1-8f068be7ed2f" />
+
 
 Claude Code 훅 중 **안정형 3종(SessionStart, Stop, Notification)** 만 분리한 복붙형 레포입니다.
 개인 계정/토큰/프로젝트별 민감 설정 없이, 훅 스크립트와 최소 설정 예제만 제공합니다.
