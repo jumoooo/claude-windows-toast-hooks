@@ -75,7 +75,8 @@ Claude Code 훅은 **`settings.json` 위치가 아닌 Claude가 열린 프로젝
 └── hooks/              ← 이 레포의 hooks 폴더 복사
     ├── setup-appid.ps1
     ├── notify-stop.ps1
-    └── notify-user.ps1
+    ├── notify-user.ps1
+    └── focus-claude.ps1
 ```
 
 이 경우 상대 경로 `.\\hooks\\...`를 그대로 사용할 수 있습니다.
@@ -84,10 +85,12 @@ Claude Code 훅은 **`settings.json` 위치가 아닌 Claude가 열린 프로젝
 
 - ✅ `SessionStart` 실행 후 레지스트리 경로 확인
   - `HKCU\Software\Classes\AppUserModelId\Claude Code`
-- ✅ `Stop` 실행 시
+  - `HKCU\Software\Classes\claude-focus\shell\open\command`
+- ✅ `Stop` / `Notification` 실행 시
   - 제목: `[폴더명] Claude Code`
   - 본문: `작업 완료 : ...`
-- ✅ `Notification` 실행 시
+  - 버튼: `화면으로` — 클릭 시 Claude 관련 창 즉시 전면으로 (WindowsTerminal → VSCode → Claude Desktop → PowerShell 순)
+- ✅ `Notification` 알림 타입별 접두어
   - `notification_type` 값에 따라 아래 접두어로 매핑
 
   | notification_type | 토스트 접두어 |
@@ -129,7 +132,7 @@ Claude Code 훅은 **`settings.json` 위치가 아닌 Claude가 열린 프로젝
 
 ## 공유 범위
 
-- 핵심 파일: 5개
+- 핵심 파일: 6개
 - 훅 이벤트: 3개
 - 입력 필드: 5개 (Stop 2, Notification 3)
 - 상태 태그: 4개

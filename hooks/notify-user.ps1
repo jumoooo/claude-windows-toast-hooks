@@ -65,6 +65,9 @@ try {
       <text>$body</text>
     </binding>
   </visual>
+  <actions>
+    <action content="화면으로" activationType="protocol" arguments="claude-focus://open"/>
+  </actions>
 </toast>
 "@
 
